@@ -18,11 +18,13 @@ export const Comments = () => {
   };
 
   return (
-    <div>
-      <p>{quotesData?.content}</p>
-      <p>{quotesData?.author}</p>
+    <div style={{ textAlign: "left" }}>
+      <p>{`"${quotesData?.content}"`}</p>
+      <p>-{quotesData?.author}</p>
 
-      <button onClick={handleClick}>New Quote</button>
+      <button style={{ margin: "3px" }} onClick={handleClick}>
+        New Quote
+      </button>
     </div>
   );
 };

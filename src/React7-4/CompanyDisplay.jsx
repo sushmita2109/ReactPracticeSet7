@@ -26,7 +26,7 @@ export const CompanyDisplay = ({ companyData }) => {
         ))}
       </select>
       {companyData.filter(shouldFilter).map((item) => (
-        <div>
+        <div key={item.name}>
           <p>{item.name}</p>
           <p>{item.email}</p>
           <p>{item.website}</p>

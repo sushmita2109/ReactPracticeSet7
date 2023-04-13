@@ -26,7 +26,7 @@ export const MovieCard = ({ movieData }) => {
         <option value="2010">2010</option>
       </select>
       {movieData.filter(shouldFilter).map((movie, id) => (
-        <div>
+        <div key={id}>
           <p>Name:{movie.title}</p>
           <p>Years:{movie.year}</p>
           <p>Ratting:{movie.rating}</p>

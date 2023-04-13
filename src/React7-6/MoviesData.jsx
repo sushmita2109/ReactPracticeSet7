@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fakeFetch } from "./fakeFetch";
 import { MovieCard } from "./MovieCard";
 
-export const MovieDisplay = () => {
+export const MoviesData = () => {
   const [movieData, setMovieData] = useState([]);
 
   const getData = async () => {
@@ -12,7 +12,7 @@ export const MovieDisplay = () => {
         setMovieData(res.data);
       }
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
     }
   };
 
@@ -20,10 +20,9 @@ export const MovieDisplay = () => {
     getData();
   }, []);
 
-  // console.log("movieData -->", movieData);
   return (
     <div>
-      <label htmlFor="years">Filter By Year:</label>
+      <h1>Movies</h1>
       <MovieCard movieData={movieData} />
     </div>
   );
