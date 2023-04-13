@@ -20,7 +20,7 @@ export const MovieDisplay = () => {
     getData();
   }, []);
 
-  console.log("movieData -->", movieData);
+  // console.log("movieData -->", movieData);
   return (
     <div>
       <label for="years">Filter By Year:</label>

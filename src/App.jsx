@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Weather } from "./React7-1/Weather";
 import { UserAdress } from "./React7-2/UserAdress";
 import { MovieDisplay } from "./React7-3/MovieDisplay";
+import { CompantDetails } from "./React7-4/CompanyDetails";
+import { Comments } from "./React7-5/Comments";
 import "./App.css";
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
       <Weather />
       <UserAdress />
       <MovieDisplay />
+      <CompantDetails />
+      <Comments />
     </div>
   );
 }
