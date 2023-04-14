@@ -5,6 +5,7 @@ import { MovieDisplay } from "./React7-3/MovieDisplay";
 import { CompantDetails } from "./React7-4/CompanyDetails";
 import { Comments } from "./React7-5/Comments";
 import { MoviesData } from "./React7-6/MoviesData";
+import { ProductDetails } from "./React7-7/ProductDetails";
 import "./App.css";
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
       <CompantDetails />
       <Comments />
       <MoviesData />
+      <ProductDetails />
     </div>
   );
 }
