@@ -1,29 +1,40 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { fakeFetch } from "./fakeFetch";
 
-export const ProductDisplay = ({ productData }) => {
-  //   const [priceData, setPriceData] = useState([productData]);
+export const ProductDisplay = () => {
+  const [productData, setProductdata] = useState([]);
 
-  const comparision = (a, b) => {
-    if (a.price < b.price) {
-      return -1;
-    } else if (a.price > b.price) {
-      return 1;
-    } else {
-      return 0;
+  const getData = async () => {
+    try {
+      const res = await fakeFetch("https://example.com/api/products");
+      if (res.status === 200) {
+        setProductdata(res.data.products);
+      }
+    } catch (err) {
+      console.log(err.message);
     }
   };
-  //   const handleData = () => {
-  //     const PriceUpdate = productData.sort(comparision);
-  //     // setPriceData(PriceUpdate);
-  //   };
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const comparision = (a, b) => a.price - b.price;
+
+  const handleData = () => {
+    // const priceUpdate = productData.slice().sort(comparision); //reference is same
+    const priceUpdate = [...productData].sort(comparision);
+    // console.log(priceUpdate);
+    setProductdata(priceUpdate);
+  };
+  //   console.log("Data", productData);
 
   return (
     <div>
-      <button onClick={() => productData.sort(comparision)}>
-        Sort by Price
-      </button>
-      {productData?.map((product) => (
-        <li key={product.name}>
+      <h1>Product Data</h1>
+      <button onClick={() => handleData()}>Sort by Price</button>
+      {productData.map((product) => (
+        <li>
           <p>{product.name}</p>
           <p>{product.description}</p>
           <p>{product.price}</p>

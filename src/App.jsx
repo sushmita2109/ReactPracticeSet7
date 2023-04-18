@@ -5,7 +5,10 @@ import { MovieDisplay } from "./React7-3/MovieDisplay";
 import { CompantDetails } from "./React7-4/CompanyDetails";
 import { Comments } from "./React7-5/Comments";
 import { MoviesData } from "./React7-6/MoviesData";
-import { ProductDetails } from "./React7-7/ProductDetails";
+import { ProductDisplay } from "./React7-7/ProductDisplay";
+import { ProductSorted } from "./React7-8/ProductSorted";
+import { SortedProduct } from "./React7-9/SortedProduct";
+import { ProductsSearch } from "./React7-10/ProductsSearch";
 import "./App.css";
 
 function App() {
@@ -19,7 +22,10 @@ function App() {
       <CompantDetails />
       <Comments />
       <MoviesData />
-      <ProductDetails />
+      <ProductDisplay />
+      <ProductSorted />
+      <SortedProduct />
+      <ProductsSearch />
     </div>
   );
 }
